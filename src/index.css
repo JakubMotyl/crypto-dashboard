@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@layer base {
+  button {
+    cursor: pointer;
+  }
+}
+
 @layer components {
   .p-container {
     @apply px-5 py-5;
@@ -8,7 +14,7 @@
     @apply px-4 py-2;
   }
   .topbar-icon {
-    @apply bg-[#1F243A] rounded-full text-white px-3 py-2 duration-200 text-xl cursor-pointer;
+    @apply bg-[#1F243A] rounded-full text-white px-3 py-2 duration-200 cursor-pointer;
   }
   .topbar-icon:hover,
   .topbar-icon:active {

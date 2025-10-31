@@ -1,3 +1,12 @@
-export interface Coin {}
-
-export interface CoinDetail {}
+export interface Coin {
+  id: string;
+  name: string;
+  symbol: string;
+  image: {
+    small: string;
+  };
+  market_data: {
+    current_price: { usd: number };
+    market_cap: { usd: number };
+  };
+}
