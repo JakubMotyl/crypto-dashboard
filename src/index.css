@@ -5,6 +5,13 @@
     @apply px-5 py-5;
   }
   .p-item {
-    @apply px-5 py-3;
+    @apply px-4 py-2;
+  }
+  .topbar-icon {
+    @apply bg-[#1F243A] rounded-full text-white px-3 py-2 duration-200 text-xl cursor-pointer;
+  }
+  .topbar-icon:hover,
+  .topbar-icon:active {
+    @apply bg-[#4A90E2];
   }
 }
