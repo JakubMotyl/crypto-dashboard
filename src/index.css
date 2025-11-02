@@ -20,4 +20,7 @@
   .topbar-icon:active {
     @apply bg-[#4A90E2];
   }
+  .table-btn {
+    @apply bg-[#4A90E2] w-1/2 rounded-2xl cursor-pointer text-white font-bold hover:bg-[#4A90E2]/80 text-sm duration-200;
+  }
 }

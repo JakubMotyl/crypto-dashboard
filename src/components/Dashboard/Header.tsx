@@ -38,7 +38,7 @@ function Header() {
           <i className="fa-solid fa-plus rounded-full"></i>
           <span>Add Liquidity</span>
         </button>
-        <button className="p-item text-sm flex items-center gap-2 border border-[#4A90E2] bg-[#4A90E2] rounded-2xl">
+        <button className="p-item text-sm flex items-center gap-2 border border-[#4A90E2] bg-[#4A90E2] hover:bg-[#4A90E2]/80 duration-200 rounded-2xl">
           Trade
         </button>
       </div>
