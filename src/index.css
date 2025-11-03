@@ -4,6 +4,14 @@
   button {
     cursor: pointer;
   }
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
 }
 
 @layer components {
@@ -21,6 +29,15 @@
     @apply bg-[#4A90E2];
   }
   .table-btn {
-    @apply bg-[#4A90E2] w-1/2 rounded-2xl cursor-pointer text-white font-bold hover:bg-[#4A90E2]/80 text-sm duration-200;
+    @apply w-1/2 rounded-2xl cursor-pointer text-white font-bold hover:bg-[#4A90E2]/80 text-sm duration-200;
+  }
+  .table-option {
+    @apply text-white outline-none border-none w-full;
+  }
+  .table-input {
+    @apply placeholder:text-gray-400 text-white w-full border-none outline-none;
+  }
+  .table-exchange {
+    @apply w-full bg-black rounded-2xl;
   }
 }

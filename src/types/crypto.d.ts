@@ -10,3 +10,9 @@ export interface Coin {
     market_cap: { usd: number };
   };
 }
+
+export interface TopCoins {
+  name: string;
+  symbol: string;
+  image: string;
+}

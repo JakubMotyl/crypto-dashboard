@@ -9,7 +9,7 @@ function Header() {
     const fetchData = async () => {
       const fetchedCoin = await getCoinData("bitcoin");
       setCoin(fetchedCoin);
-      console.log(fetchedCoin);
+      // console.log(fetchedCoin);
     };
     fetchData();
   }, []);

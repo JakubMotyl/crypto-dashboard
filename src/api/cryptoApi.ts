@@ -10,3 +10,11 @@ export const getCoinData = async (coinId: string): Promise<Coin> => {
   const data = await res.json();
   return data;
 };
+
+export const getTopCoins = async () => {
+  const res = await fetch(
+    `${apiUrl}/coins/markets?vs_currency=usd&x_cg_demo_api_key=${apiKey}`
+  );
+  const data = await res.json();
+  return data;
+};

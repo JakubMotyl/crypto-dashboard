@@ -40,7 +40,7 @@ export default function Sidebar() {
       {/* Logo */}
       <div className="flex items-center gap-3 p-item">
         <div className="text-[1.5rem] md:block hidden">
-          <i className="fa-brands fa-resolving"></i>
+          <i className="fa-brands fa-think-peaks"></i>
         </div>
         <div>
           <span className="text-white text-lg font-semibold">CryptoTrade</span>
