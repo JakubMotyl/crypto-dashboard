@@ -17,7 +17,7 @@ const TableTop = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getTopCoins();
-      console.log(data.slice(0, 4));
+      // console.log(data.slice(0, 4));
       setPopular(data.slice(0, 4));
     };
     fetchData();

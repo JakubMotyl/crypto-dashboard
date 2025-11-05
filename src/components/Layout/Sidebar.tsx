@@ -38,7 +38,7 @@ export default function Sidebar() {
   return (
     <nav className="h-full w-fit flex flex-col text-white">
       {/* Logo */}
-      <div className="flex items-center gap-3 p-item h-24">
+      <div className="flex items-center gap-3 p-item h-20">
         <div className="text-[1.5rem] md:block hidden">
           <i className="fa-brands fa-think-peaks"></i>
         </div>

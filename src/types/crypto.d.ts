@@ -6,8 +6,24 @@ export interface Coin {
     small: string;
   };
   market_data: {
-    current_price: { usd: number };
-    market_cap: { usd: number };
+    current_price: {
+      usd: number;
+    };
+    low_24h: {
+      usd: number;
+    };
+    high_24h: {
+      usd: number;
+    };
+    market_cap: {
+      usd: number;
+    };
+    price_change_percentage_24h_in_currency: {
+      usd: number;
+    };
+    total_volume: {
+      usd: number;
+    };
   };
 }
 
