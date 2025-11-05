@@ -36,9 +36,9 @@ export default function Sidebar() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   return (
-    <nav className="h-full w-fit p-container flex flex-col gap-10 text-white">
+    <nav className="h-full w-fit flex flex-col text-white">
       {/* Logo */}
-      <div className="flex items-center gap-3 p-item">
+      <div className="flex items-center gap-3 p-item h-24">
         <div className="text-[1.5rem] md:block hidden">
           <i className="fa-brands fa-think-peaks"></i>
         </div>
@@ -48,7 +48,7 @@ export default function Sidebar() {
       </div>
 
       {/* Navigation */}
-      <div className="flex flex-col justify-between flex-1 w-full">
+      <div className="flex flex-col justify-between p-container flex-1 w-full">
         <ul className="flex flex-col space-y-2">
           {navLinks.map((item, index) => (
             <li

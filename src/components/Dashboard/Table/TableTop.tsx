@@ -30,7 +30,7 @@ const TableTop = () => {
   };
 
   return (
-    <div className="col-span-2 row-span-4 bg-[#1F243A] rounded-2xl p-container flex flex-col justify-between">
+    <div className="col-span-2 row-span-3 bg-[#1F243A] rounded-2xl p-container flex flex-col justify-between">
       {/* Buttons */}
       <div className="bg-black p-2 rounded-2xl flex items-center gap-2">
         <button
@@ -50,7 +50,7 @@ const TableTop = () => {
         </button>
       </div>
       {/* Exchange container */}
-      <div className="flex flex-col gap-6">
+      <div className="flex gap-2">
         <div className="flex flex-col w-full gap-1">
           <label htmlFor="coin" className="text-white font-light text-[0.8rem]">
             Coin
@@ -59,7 +59,6 @@ const TableTop = () => {
             <div id="coin" className="table-option">
               <div className="flex items-center justify-between">
                 <img src={toBuy?.image} alt={toBuy?.name} className="h-5 w-5" />
-                <span className="text-[0.85rem]">{toBuy?.name}</span>
                 <p className="uppercase text-xs">{toBuy?.symbol}</p>
                 <div
                   className="cursor-pointer hover:text-[#4A90E2] active:text-[#4A90E2] duration-200"
