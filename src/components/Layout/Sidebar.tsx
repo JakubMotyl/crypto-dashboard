@@ -1,4 +1,4 @@
-import { useState, type ReactElement } from "react";
+import { useEffect, useState, type ReactElement } from "react";
 
 interface navLinksProps {
   icon: ReactElement;
@@ -33,17 +33,26 @@ const navLinks: navLinksProps[] = [
 ];
 
 export default function Sidebar() {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const [darkMode, setDarkMode] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    // console.log(darkMode);
+  }, [darkMode]);
 
   return (
-    <nav className="h-full w-fit flex flex-col text-white">
+    <nav className="h-full w-fit flex flex-col">
       {/* Logo */}
       <div className="flex items-center gap-3 p-item h-20">
-        <div className="text-[1.5rem] md:block hidden">
+        <div className="text-[1.5rem] text-white">
           <i className="fa-brands fa-think-peaks"></i>
         </div>
         <div>
-          <span className="text-white text-lg font-semibold">CryptoTrade</span>
+          <span className="text-lg font-semibold text-white">CryptoTrade</span>
         </div>
       </div>
 
@@ -68,7 +77,7 @@ export default function Sidebar() {
           {/* Light label */}
           <p
             className={`text-sm duration-300 md:block hidden ${
-              !isDarkMode ? "text-white" : "text-gray-400"
+              !darkMode ? "text-white" : "text-gray-400"
             }`}
           >
             Light
@@ -77,11 +86,11 @@ export default function Sidebar() {
           {/* Toggle */}
           <div
             className="relative h-7 w-16 flex items-center border border-gray-400 rounded-2xl cursor-pointer"
-            onClick={() => setIsDarkMode((prev) => !prev)}
+            onClick={() => setDarkMode((prev) => !prev)}
           >
             <div
               className={`absolute left-1 h-5 w-5 bg-[#4A90E2] rounded-full transition-transform duration-300 ${
-                isDarkMode ? "translate-x-[34px]" : "translate-x-0"
+                darkMode ? "translate-x-[34px]" : "translate-x-0"
               }`}
             />
           </div>
@@ -89,7 +98,7 @@ export default function Sidebar() {
           {/* Dark label */}
           <p
             className={`text-sm duration-300 md:block hidden ${
-              isDarkMode ? "text-white" : "text-gray-400"
+              darkMode ? "text-white" : "text-gray-400"
             }`}
           >
             Dark
