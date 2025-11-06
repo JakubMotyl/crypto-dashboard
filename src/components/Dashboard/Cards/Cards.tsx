@@ -25,8 +25,14 @@ export default function Cards() {
         name={"Volume"}
         price={coin?.market_data?.total_volume?.usd}
       />
-      <CardDetails name={"Low 24h"} price={coin?.market_data?.low_24h?.usd} />
-      <CardDetails name={"High 24h"} price={coin?.market_data?.high_24h.usd} />
+      <CardDetails
+        name={"Lowest 24h"}
+        price={coin?.market_data?.low_24h?.usd}
+      />
+      <CardDetails
+        name={"Highest 24h"}
+        price={coin?.market_data?.high_24h.usd}
+      />
     </div>
   );
 }

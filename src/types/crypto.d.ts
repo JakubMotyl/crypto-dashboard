@@ -18,9 +18,6 @@ export interface Coin {
     market_cap: {
       usd: number;
     };
-    price_change_percentage_24h_in_currency: {
-      usd: number;
-    };
     total_volume: {
       usd: number;
     };

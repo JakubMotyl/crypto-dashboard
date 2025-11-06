@@ -43,14 +43,13 @@ const TableTop = () => {
           className={`table-btn p-item ${
             !buyCat ? "bg-[#4A90E2]" : "bg-black"
           }`}
-          disabled
           onClick={() => setBuyCat(false)}
         >
           Sell
         </button>
       </div>
       {/* Exchange container */}
-      <div className="flex gap-2">
+      <div className="flex lg:flex-col flex-row gap-2">
         <div className="flex flex-col w-full gap-1">
           <label htmlFor="coin" className="text-white font-light text-[0.8rem]">
             Coin
@@ -118,7 +117,9 @@ const TableTop = () => {
         </span>
       </div>
       <div className="flex justify-center">
-        <button className="table-btn p-item bg-[#4A90E2]">Buy</button>
+        <button className="table-btn p-item bg-[#4A90E2] hover:bg-[#4A90E2]/80 duration-200">
+          Buy
+        </button>
       </div>
     </div>
   );

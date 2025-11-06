@@ -35,12 +35,16 @@ function TableBottom() {
             className="flex flex-col gap-1 hover:bg-[#4A90E2] h-full group p-item duration-200"
           >
             <div className="flex items-center gap-2">
-              <span className="font-black text-xs">{blog?.category}</span>
+              <span className="font-black text-xs lg:text-[0.9rem]">
+                {blog?.category}
+              </span>
               <div className="w-2 h-2 bg-[#4A90E2] group-hover:bg-[#FFF] rounded-full" />
-              <span className="font-light text-xs">{blog?.date}</span>
+              <span className="font-light text-xs lg:text-[0.9rem]">
+                {blog?.date}
+              </span>
             </div>
             <a className="flex items-center justify-between cursor-pointer">
-              <p className="text-sm font-light mr-2 group-hover:underline">
+              <p className="text-sm lg:text-[1rem] font-light mr-2 group-hover:underline">
                 {blog?.title}
               </p>
               <div className="text-[#4A90E2] group-hover:text-[#FFF]">
