@@ -30,7 +30,7 @@ const TableTop = () => {
   };
 
   return (
-    <div className="col-span-2 row-span-3 bg-[#1F243A] rounded-2xl p-container flex flex-col justify-between">
+    <div className="lg:col-start-5 lg:col-end-7 lg:row-start-1 lg:row-end-4 md:col-start-1 md:col-end-3 md:row-start-7 md:row-end-9 col-start-1 col-end-2 row-start-6 row-end-8 bg-[#1F243A] rounded-2xl p-item flex flex-col justify-between">
       {/* Buttons */}
       <div className="bg-black p-2 rounded-2xl flex items-center gap-2">
         <button
@@ -49,16 +49,19 @@ const TableTop = () => {
         </button>
       </div>
       {/* Exchange container */}
-      <div className="flex lg:flex-col flex-row gap-2">
+      <div className="flex flex-col gap-4">
         <div className="flex flex-col w-full gap-1">
-          <label htmlFor="coin" className="text-white font-light text-[0.8rem]">
+          <label
+            htmlFor="coin"
+            className="text-white font-light md:text-[0.8rem] text-xs"
+          >
             Coin
           </label>
           <div className="table-exchange p-item relative">
             <div id="coin" className="table-option">
               <div className="flex items-center justify-between">
                 <img src={toBuy?.image} alt={toBuy?.name} className="h-5 w-5" />
-                <p className="uppercase text-xs">{toBuy?.symbol}</p>
+                <p className="uppercase text-[0.8rem]">{toBuy?.symbol}</p>
                 <div
                   className="cursor-pointer hover:text-[#4A90E2] active:text-[#4A90E2] duration-200"
                   onClick={() => setIsOpen((prev) => !prev)}
@@ -82,7 +85,7 @@ const TableTop = () => {
                         alt={item.name}
                         className="h-5 w-5"
                       />
-                      <span className="text-[0.85rem]">{item?.name}</span>
+                      <span className="text-[0.8rem]">{item?.name}</span>
                       <p className="uppercase text-xs">{item?.symbol}</p>
                     </li>
                   ))}
@@ -94,7 +97,7 @@ const TableTop = () => {
         <div className="flex flex-col w-full gap-1">
           <label
             htmlFor="ammount"
-            className="text-white font-light text-[0.8rem]"
+            className="text-white font-light md:text-[0.8rem] text-xs"
           >
             Ammount
           </label>
@@ -104,15 +107,15 @@ const TableTop = () => {
               type="number"
               placeholder="1000"
               value={value}
-              className="table-input"
+              className="table-input md:text-sm text-xs"
               onChange={handleChange}
             />
           </div>
         </div>
       </div>
       <div className="flex items-center justify-between">
-        <p className="text-gray-300 text">Total:</p>
-        <span className="text-white font-semibold">
+        <p className="text-gray-300 text-sm">Total:</p>
+        <span className="text-white text-sm font-semibold">
           ${value === "" ? 0 : value}
         </span>
       </div>

@@ -24,7 +24,7 @@ const blogData: blogDataProps[] = [
 
 function TableBottom() {
   return (
-    <div className="text-white bg-[#1F243A] rounded-2xl col-start-5 col-end-7 row-span-3 flex flex-col">
+    <div className="text-white bg-[#1F243A] rounded-2xl lg:col-start-5 lg:col-end-7 lg:row-start-4 lg:row-end-7 md:col-start-3 md:col-end-5 md:row-start-7 md:row-end-9 col-start-2 col-end-3 row-start-6 row-end-8 flex flex-col">
       <div className="p-container text-center">
         <span className="font-bold">Check our blog</span>
       </div>
@@ -35,16 +35,16 @@ function TableBottom() {
             className="flex flex-col gap-1 hover:bg-[#4A90E2] h-full group p-item duration-200"
           >
             <div className="flex items-center gap-2">
-              <span className="font-black text-xs lg:text-[0.9rem]">
+              <span className="font-black text-[0.7rem] lg:text-[0.9rem] md:[0.8rem]">
                 {blog?.category}
               </span>
               <div className="w-2 h-2 bg-[#4A90E2] group-hover:bg-[#FFF] rounded-full" />
-              <span className="font-light text-xs lg:text-[0.9rem]">
+              <span className="font-light text-[0.7rem] lg:text-[0.9rem] md:[0.8rem]">
                 {blog?.date}
               </span>
             </div>
             <a className="flex items-center justify-between cursor-pointer">
-              <p className="text-sm lg:text-[1rem] font-light mr-2 group-hover:underline">
+              <p className="text-[0.85rem] md:text-[0.95rem] font-light mr-2 group-hover:underline">
                 {blog?.title}
               </p>
               <div className="text-[#4A90E2] group-hover:text-[#FFF]">

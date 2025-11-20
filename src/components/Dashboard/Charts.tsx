@@ -60,19 +60,21 @@ export default function Charts() {
   }, []);
 
   return (
-    <div className="col-start-1 col-end-5 row-start-3 row-end-7 rounded-2xl flex flex-col justify-between bg-[#1F243A] p-item">
-      <div className="flex items-center justify-between p-container">
+    <div className="col-start-1 md:col-end-5 col-end-3 md:row-start-3 row-start-4 md:row-end-7 row-end-6 rounded-2xl flex flex-col gap-4 justify-between bg-[#1F243A] p-item">
+      <div className="flex items-center justify-between">
         <div>
-          <span className="text-3xl font-semibold text-white">
+          <span className="lg:text-3xl md:text-2xl text-xl font-semibold text-white">
             ${coin?.market_data?.current_price?.usd.toLocaleString("en-US")}
           </span>
-          <span className="text-gray-300 font-light text-2xl ml-2">USD</span>
+          <span className="text-gray-300 font-light lg:text-2xl md:text-xl text-base ml-2">
+            USD
+          </span>
         </div>
         <div className="flex items-center rounded-2xl overflow-hidden bg-black">
           {CHART_TIME.map((time, index) => (
             <div
               key={index}
-              className={`hover:bg-[#4A90E2] duration-200 p-item cursor-pointer rounded-2xl ${
+              className={`hover:bg-[#4A90E2] duration-200 md:px-3 md:py-2 px-2 py-1 lg:text-base md:text-sm text-[0.7rem] cursor-pointer rounded-2xl ${
                 time === "1W" ? "bg-[#4A90E2]" : "bg-black"
               }`}
             >
@@ -81,13 +83,14 @@ export default function Charts() {
           ))}
         </div>
       </div>
-      <div className="flex-1">
+      <div className="relative w-full min-h-0 overflow-hidden">
         {chartData ? (
           <Line
             data={chartData}
             options={{
               responsive: true,
               maintainAspectRatio: false,
+              resizeDelay: 0,
               scales: {
                 x: {
                   ticks: { color: "#FFF" },

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  @apply min-h-screen w-full bg-[#0D111F];
+}
+
 @layer base {
   button {
     cursor: pointer;
@@ -22,14 +26,14 @@
     @apply px-3 py-2;
   }
   .topbar-icon {
-    @apply bg-[#1F243A] rounded-full text-white px-3 py-2 duration-200 cursor-pointer;
+    @apply bg-[#1F243A] rounded-full text-white px-3 py-2 duration-200 cursor-pointer md:text-base text-sm;
   }
   .topbar-icon:hover,
   .topbar-icon:active {
     @apply bg-[#4A90E2];
   }
   .table-btn {
-    @apply w-1/2 rounded-2xl cursor-pointer text-white font-bold hover:bg-[#4A90E2]/80 text-sm duration-200;
+    @apply w-1/2 rounded-2xl cursor-pointer text-white font-bold hover:bg-[#4A90E2]/80 text-[0.8rem] duration-200;
   }
   .table-option {
     @apply text-white outline-none border-none w-full;

@@ -16,7 +16,7 @@ export default function Cards() {
   }, []);
 
   return (
-    <div className="col-start-1 col-end-5 row-span-1 row-start-2 grid grid-cols-4 gap-4">
+    <div className="col-start-1 md:col-end-5 col-end-3 row-start-2 md:row-end-3 row-end-4 grid md:grid-cols-4 grid-cols-2 gap-4">
       <CardDetails
         name={"Market Cap"}
         price={coin?.market_data.market_cap?.usd}

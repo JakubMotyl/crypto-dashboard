@@ -1,13 +1,16 @@
+import { useState } from "react";
 import Sidebar from "../components/Layout/Sidebar";
 import Topbar from "../components/Layout/Topbar";
 import Dashboard from "../components/Dashboard/Dashboard";
 
 export default function DashboardPage() {
+  const [showNav, setShowNav] = useState<boolean>(false);
+
   return (
-    <main className="h-screen bg-[#0D111F] w-full flex divide-x divide-gray-600">
-      <Sidebar />
-      <div className="flex flex-col flex-1">
-        <Topbar />
+    <main className="relative w-full">
+      <Sidebar showNav={showNav} setShowNav={setShowNav} />
+      <div className="flex flex-col w-full h-screen">
+        <Topbar setShowNav={setShowNav} showNav={showNav} />
         <Dashboard />
       </div>
     </main>

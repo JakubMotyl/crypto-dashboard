@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactElement } from "react";
+import type { NavProps } from "../../types/layout";
 
 interface navLinksProps {
   icon: ReactElement;
@@ -32,9 +33,10 @@ const navLinks: navLinksProps[] = [
   },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ showNav, setShowNav }: NavProps) {
   const [darkMode, setDarkMode] = useState<boolean>(true);
 
+  // Controle dark mode
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -45,9 +47,22 @@ export default function Sidebar() {
   }, [darkMode]);
 
   return (
-    <nav className="h-full w-fit flex flex-col">
+    <nav
+      className={`absolute ${
+        showNav ? "translate-x-0" : "-translate-x-full"
+      } md:w-fit w-full h-full flex-col bg-[#0D111F] z-50 border border-r-gray-600 duration-300 ease-out`}
+    >
+      {/* Close Button */}
+      <div className="relative h-10">
+        <button
+          className="absolute right-1 top-1 h-full topbar-icon text-red-600 hover:bg-red-300"
+          onClick={() => setShowNav((prev) => !prev)}
+        >
+          <i className="fa-solid fa-xmark"></i>
+        </button>
+      </div>
       {/* Logo */}
-      <div className="flex items-center gap-3 p-item h-20">
+      <div className="flex items-center gap-3 p-item h-20 justify-center">
         <div className="text-[1.5rem] text-white">
           <i className="fa-brands fa-think-peaks"></i>
         </div>
@@ -69,14 +84,14 @@ export default function Sidebar() {
               }`}
             >
               <span>{item.icon}</span>
-              <span className="md:block hidden">{item.name}</span>
+              <span>{item.name}</span>
             </li>
           ))}
         </ul>
-        <div className="flex items-center md:justify-between justify-center w-full">
+        <div className="mt-10 flex items-center md:justify-between justify-center gap-3 w-full">
           {/* Light label */}
           <p
-            className={`text-sm duration-300 md:block hidden ${
+            className={`text-sm duration-300 ${
               !darkMode ? "text-white" : "text-gray-400"
             }`}
           >
@@ -97,7 +112,7 @@ export default function Sidebar() {
 
           {/* Dark label */}
           <p
-            className={`text-sm duration-300 md:block hidden ${
+            className={`text-sm duration-300 ${
               darkMode ? "text-white" : "text-gray-400"
             }`}
           >
