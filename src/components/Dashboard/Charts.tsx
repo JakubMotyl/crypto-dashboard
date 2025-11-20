@@ -83,27 +83,29 @@ export default function Charts() {
           ))}
         </div>
       </div>
-      <div className="relative w-full min-h-0 overflow-hidden">
-        {chartData ? (
-          <Line
-            data={chartData}
-            options={{
-              responsive: true,
-              maintainAspectRatio: false,
-              resizeDelay: 0,
-              scales: {
-                x: {
-                  ticks: { color: "#FFF" },
+      <div className="relative w-full flex-1 min-h-[250px]">
+        <div className="absolute inset-0">
+          {chartData ? (
+            <Line
+              data={chartData}
+              options={{
+                responsive: true,
+                maintainAspectRatio: false,
+                resizeDelay: 0,
+                scales: {
+                  x: {
+                    ticks: { color: "#FFF" },
+                  },
+                  y: {
+                    ticks: { color: "#FFF" },
+                  },
                 },
-                y: {
-                  ticks: { color: "#FFF" },
-                },
-              },
-            }}
-          />
-        ) : (
-          <p>loading</p>
-        )}
+              }}
+            />
+          ) : (
+            <p>loading</p>
+          )}
+        </div>
       </div>
     </div>
   );

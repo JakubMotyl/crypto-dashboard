@@ -9,7 +9,7 @@ export default function DashboardPage() {
   return (
     <main className="relative w-full">
       <Sidebar showNav={showNav} setShowNav={setShowNav} />
-      <div className="flex flex-col w-full h-screen">
+      <div className="flex flex-col min-h-screen w-full">
         <Topbar setShowNav={setShowNav} showNav={showNav} />
         <Dashboard />
       </div>
