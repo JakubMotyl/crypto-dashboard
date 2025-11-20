@@ -17,7 +17,7 @@ export default function Topbar({ setShowNav }: NavProps) {
         </div>
         <input
           type="text"
-          placeholder="Start writing or type a command"
+          placeholder="Bitcoin"
           className="border-none text-white placeholder:text-gray-400 outline-none min-w-0 w-full"
         />
       </div>

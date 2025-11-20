@@ -89,6 +89,7 @@ export default function Charts() {
             <Line
               data={chartData}
               options={{
+                animation: false,
                 responsive: true,
                 maintainAspectRatio: false,
                 resizeDelay: 0,
