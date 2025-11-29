@@ -8,6 +8,7 @@ const TableTop = () => {
   const [popular, setPopular] = useState<TopCoins[]>([]);
   const [buyCat, setBuyCat] = useState<boolean>(true);
   const [toBuy, setToBuy] = useState<TopCoins>({
+    id: "bitcoin",
     image:
       "https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400",
     name: "Bitcoin",

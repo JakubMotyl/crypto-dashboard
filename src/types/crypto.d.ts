@@ -25,6 +25,7 @@ export interface Coin {
 }
 
 export interface TopCoins {
+  id: string;
   name: string;
   symbol: string;
   image: string;

@@ -15,7 +15,7 @@ export const getCoinData = async (coinId: string): Promise<Coin> => {
     return data;
   } catch (error) {
     console.log("Error fetching data", error);
-    throw Error;
+    throw error;
   }
 };
 
@@ -31,7 +31,7 @@ export const getTopCoins = async () => {
     return data;
   } catch (error) {
     console.log("Error fetching data", error);
-    throw Error;
+    throw error;
   }
 };
 
@@ -47,6 +47,6 @@ export const getMarketChart = async (coinId: string): Promise<any> => {
     return data;
   } catch (error) {
     console.log("Error fetching market data", error);
-    throw Error;
+    throw error;
   }
 };

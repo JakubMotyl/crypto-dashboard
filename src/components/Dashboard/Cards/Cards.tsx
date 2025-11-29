@@ -1,20 +1,7 @@
-import { useEffect, useState } from "react";
 import type { Coin } from "../../../types/crypto";
-import { getCoinData } from "../../../api/cryptoApi";
 import CardDetails from "./CardDetails";
 
-export default function Cards() {
-  const [coin, setCoin] = useState<Coin | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedCoin = await getCoinData("bitcoin");
-      setCoin(fetchedCoin);
-      // console.log(fetchedCoin);
-    };
-    fetchData();
-  }, []);
-
+export default function Cards({ coin }: { coin: Coin | null }) {
   return (
     <div className="col-start-1 md:col-end-5 col-end-3 row-start-2 md:row-end-3 row-end-4 grid md:grid-cols-4 grid-cols-2 gap-4">
       <CardDetails
@@ -31,7 +18,7 @@ export default function Cards() {
       />
       <CardDetails
         name={"Highest 24h"}
-        price={coin?.market_data?.high_24h.usd}
+        price={coin?.market_data?.high_24h?.usd}
       />
     </div>
   );

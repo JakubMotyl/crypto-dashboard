@@ -1,19 +1,8 @@
-import { getCoinData } from "../../api/cryptoApi";
 import type { Coin } from "../../types/crypto";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-function Header() {
-  const [coin, setCoin] = useState<Coin | null>(null);
+function Header({ coin }: { coin: Coin | null }) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedCoin = await getCoinData("bitcoin");
-      setCoin(fetchedCoin);
-      // console.log(fetchedCoin);
-    };
-    fetchData();
-  }, []);
 
   return (
     <div className="text-white flex items-center justify-between col-start-1 md:col-end-5 col-end-3 row-start-1 row-end-2 relative">

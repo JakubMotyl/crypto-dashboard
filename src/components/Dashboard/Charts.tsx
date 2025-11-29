@@ -23,15 +23,14 @@ ChartJS.register(
 
 const CHART_TIME: string[] = ["1H", "1D", "3D", "1W", "1M"];
 
-export default function Charts() {
+export default function Charts({ coin }: { coin: Coin | null }) {
   const [chartData, setChartData] = useState<any>(null);
-  const [coin, setCoin] = useState<Coin | null>(null);
 
   useEffect(() => {
+    if (coin?.id === undefined || coin?.id === null) return;
+
     const fetchData = async () => {
-      const marketData = await getMarketChart("bitcoin");
-      const coinData = await getCoinData("bitcoin");
-      setCoin(coinData);
+      const marketData = await getMarketChart(coin?.id);
       const allPrices: [number, number][] = marketData.prices;
       const dailyPrices = allPrices.filter((_, index) => index % 24 === 0);
       const labels = dailyPrices.map((p: [number, number]) =>
@@ -57,14 +56,16 @@ export default function Charts() {
       });
     };
     fetchData();
-  }, []);
+  }, [coin]);
+
+  const currentPrice = coin?.market_data?.current_price?.usd;
 
   return (
     <div className="col-start-1 md:col-end-5 col-end-3 md:row-start-3 row-start-4 md:row-end-7 row-end-6 rounded-2xl flex flex-col gap-4 justify-between bg-[#1F243A] p-item">
       <div className="flex items-center justify-between">
         <div>
           <span className="lg:text-3xl md:text-2xl text-xl font-semibold text-white">
-            ${coin?.market_data?.current_price?.usd.toLocaleString("en-US")}
+            ${currentPrice ? currentPrice.toLocaleString("en-US") : ""}
           </span>
           <span className="text-gray-300 font-light lg:text-2xl md:text-xl text-base ml-2">
             USD
@@ -104,7 +105,9 @@ export default function Charts() {
               }}
             />
           ) : (
-            <p>loading</p>
+            <p className="md:text-4xl text-3xl text-white flex items-center h-full justify-center">
+              Loading...
+            </p>
           )}
         </div>
       </div>
