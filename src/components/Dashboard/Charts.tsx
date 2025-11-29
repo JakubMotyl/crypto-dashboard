@@ -9,7 +9,7 @@ import {
   Tooltip,
 } from "chart.js";
 import { useEffect, useState } from "react";
-import { getMarketChart, getCoinData } from "../../api/cryptoApi";
+import { getMarketChart } from "../../api/cryptoApi";
 import type { Coin } from "../../types/crypto";
 
 ChartJS.register(
