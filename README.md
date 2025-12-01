@@ -11,13 +11,13 @@ A real-time cryptocurrency dashboard providing market data and dynamic price cha
 
 ## ✨ Features
 - Real-time cryptocurrency price tracking.
-- Track by top 4 most popular currencies
+- Track the top 4 most popular cryptocurrencies
 - Fully responsive design.
 
 ## ⚙️ How to Run Locally
 1. **Clone the repository:**
   ```bash
-     git clone [https://github.com/JakubMotyl/Movie-search.git](https://github.com/JakubMotyl/Movie-search.git)
+     git clone https://github.com/JakubMotyl/crypto-dashboard.git
      cd crypto-dashboard
   ```
 2. **Install dependencies:**
