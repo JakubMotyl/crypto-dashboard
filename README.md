@@ -17,7 +17,7 @@ A real-time cryptocurrency dashboard providing market data and dynamic price cha
 ## ⚙️ How to Run Locally
 1. **Clone the repository:**
   ```bash
-     git clone [https://github.com/JakubMotyl/crypto-dashboard.git](https://github.com/JakubMotyl/crypto-dashboard.git)
+     git clone [https://github.com/JakubMotyl/Movie-search.git](https://github.com/JakubMotyl/Movie-search.git)
      cd crypto-dashboard
   ```
 2. **Install dependencies:**
